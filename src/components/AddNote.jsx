@@ -1,21 +1,20 @@
 import React from "react";
+import Button from "./Button";
 
-export default function AddNote() {
-  return (
-    <div className="note plus">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        className="bi bi-plus-lg plus"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fillRule="evenodd"
-          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"
-        />
-      </svg>{" "}
-    </div>
-  );
+function materializeEffect(event) {
+  document.getElementById("temp") && document.getElementById("temp").remove();
+  const circle = document.createElement("div");
+  circle.setAttribute("id", "temp");
+  const x = event.nativeEvent.offsetX;
+  const y = event.nativeEvent.offsetY;
+  circle.classList.add("circle");
+  circle.style.left = `${x}px`;
+  circle.style.top = `${y}px`;
+  event.currentTarget.appendChild(circle);
 }
+
+function AddNote() {
+  return <Button type="submit" onClick={materializeEffect} />;
+}
+
+export default AddNote;
