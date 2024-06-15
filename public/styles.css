@@ -54,3 +54,14 @@ footer p {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+.plus.note {
+  width: 9em;
+  height: 9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plus {
+  width: 3em;
+  height: 3em;
+}
